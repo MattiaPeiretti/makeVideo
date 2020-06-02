@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Load your files</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="../js/browser.js"></script>
+
+    <script>
+
+    </script>
+
+    <style>
+        body {
+            background-color: #f6d186;
+        }
+
+
+        nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+
+        main,
+        nav {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .help {
+            margin: 0;
+            padding: 0;
+            height: 32px;
+            width: 32px;
+        }
+
+        .select {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .select-folder__button,
+        .select-files__button {
+            height: 70px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            background-color: #fcf7bb;
+        }
+
+        .select-folder__icon,
+        .select-files__icon {
+            padding-right: 40px;
+            padding-left: 20px;
+        }
+
+        .select-folder__icon {
+            height: 32px;
+            width: 32px;
+        }
+
+        .select-files__icon {
+            height: 32px;
+            width: 32px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .controls button {
+            width: 48%;
+            height: 40px;
+            max-width: 300px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Select your files</h1>
+        <button class="help">?</button>
+    </nav>
+    <main>
+        <div class="select">
+            <button class="select-folder__button" onclick="eel.ask_folder();">
+                <img class="select-folder__icon" src="../assets/icons/folder.svg" />
+                <span class="select-folder__text">Select Folder</span>
+            </button>
+
+
+            <button class="select-files__button" onclick="eel.ask_multiple_files();">
+                <img class="select-files__icon" src="../assets/icons/document.svg" />
+                <span class="select-files__text">Select Files</span>
+            </button>
+        </div>
+        <div class="controls">
+            <button class="confirm important" onclick="eel.submit()">Continue</button>
+            <button onclick="" class="cancel">Cancel</button>
+        </div>
+
+    </main>
+
+
+
+    <!-- <script>
+
+
+        /*
+    //renderer.js - a renderer process
+    const {remote} = require('electron'),
+    dialog = remote.dialog,
+    WIN = remote.getCurrentWindow();
+    */
+
+        let options = {
+            // See place holder 1 in above image
+            title: "Custom title bar",
+
+            // See place holder 2 in above image
+            defaultPath: "D:\\electron-app",
+
+            // See place holder 3 in above image
+            buttonLabel: "Custom button",
+
+            // See place holder 4 in above image
+            filters: [
+                { name: 'Images', extensions: ['jpg', 'png', 'gif'] },
+                { name: 'Movies', extensions: ['mkv', 'avi', 'mp4'] },
+                { name: 'Custom File Type', extensions: ['as'] },
+                { name: 'All Files', extensions: ['*'] }
+            ],
+            properties: ['openFile', 'multiSelections']
+        }
+
+        //Synchronous
+        let filePaths = dialog.showOpenDialog(WIN, options);
+        console.log(filePaths);
+
+        //Or asynchronous - using callback
+        dialog.showOpenDialog(WIN, options, (filePaths) => {
+            console.log(filePaths);
+        })
+
+
+    </script> -->
+
+</body>
+
+</html>
